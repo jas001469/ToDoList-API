@@ -1,23 +1,22 @@
 import mongoose from "mongoose";
 
-const taskSchema = new mongoose.Schema(
-    {
-        title:{
-            type: String,
-            require: true
-        },
-        description:{
-            type: String,
-            required: false
-        },
-        status: {
-            type: String,
-            default: "pending",
-            enum: ["pending", "in-progress", "completed"]
-        },
-    },
-);
+// Schema for the tasks
+const taskSchema = new mongoose.Schema({
+  title: {
+    type: String,
+    require: true,
+  },
+  description: {
+    type: String,
+    required: false,
+  },
+  status: {
+    type: String,
+    default: "pending",
+    enum: ["pending", "in-progress", "completed"],
+  },
+});
 
-const Tasks = mongoose.model("Tasks", taskSchema)
+const Tasks = mongoose.model("Tasks", taskSchema);
 
 export default Tasks;

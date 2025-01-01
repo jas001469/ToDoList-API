@@ -1,14 +1,21 @@
 import express from "express";
-import { createNewTask, fetchAllTasks, fetchTaskByID, updateTask, deleteTask } from "../controllers/taskController.js";
-import { protectRoute } from "../middleware/authMiddleware.js";
+import {
+  createNewTask,
+  fetchAllTasks,
+  fetchTaskByID,
+  updateTask,
+  deleteTask,
+} from "../controllers/taskController.js"; //import the controller functions
+import { protectRoute } from "../middleware/authMiddleware.js"; //import the protectRoute middleware
 
 const router = express.Router();
 
-router.post('/tasks', createNewTask)
-router.get('/tasks', fetchAllTasks)
-router.get('/tasks/:id', fetchTaskByID)
-router.put('/tasks/:id', updateTask)
-router.delete('/tasks/:id',  deleteTask)
+// Define the routes and the corresponding controller functions
+router.post("/tasks", createNewTask);
+router.get("/tasks", fetchAllTasks);
+router.get("/tasks/:id", fetchTaskByID);
+router.put("/tasks/:id", updateTask);
+router.delete("/tasks/:id", deleteTask);
 
 //we can protect the routes using authMiddleware
 

@@ -10,7 +10,7 @@ router.get('/tasks/:id', fetchTaskByID)
 router.put('/tasks/:id', updateTask)
 router.delete('/tasks/:id',  deleteTask)
 
-//we can protect the routes using authMiddkeware
+//we can protect the routes using authMiddleware
 
 // router.post('/tasks',protectRoute ,createNewTask)
 // router.get('/tasks',protectRoute ,fetchAllTasks)
